@@ -87,16 +87,16 @@ class ProductManager {
 
 
 
-module.exports = new ProductManager(); 
+
 
 
 // TESTEANDO LO QUE HICE 
-// const productManager = new ProductManager('productos.json');
+const productManager = new ProductManager('productos.json');
 
 // console.log("Productos iniciales:", productManager.getProducts());
 
-// productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25);
-// productManager.addProduct("producto prueba1", "Este es un producto prueba1", 500, "Sin imagen", "abc456", 25);
+productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25);
+productManager.addProduct("producto prueba1", "Este es un producto prueba1", 500, "Sin imagen", "abc456", 25);
 
 // const idbuscado = 1;
 // const productobuscado = productManager.getProductById(idbuscado);
@@ -115,3 +115,5 @@ module.exports = new ProductManager();
 
 // // Llamar a "getProducts" después de la eliminación
 // console.log("Productos:", productManager.getProducts());
+
+module.exports = ProductManager; 
