@@ -1,3 +1,5 @@
+const productManager = require ("./ProductManager")
+
 const express = require("express");
 const app = express();
 

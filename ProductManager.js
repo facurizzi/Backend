@@ -85,29 +85,33 @@ class ProductManager {
   }
 }
 
+
+
+module.exports = new ProductManager(); 
+
+
 // TESTEANDO LO QUE HICE 
-const productManager = new ProductManager('productos.json');
+// const productManager = new ProductManager('productos.json');
 
-console.log("Productos iniciales:", productManager.getProducts());
+// console.log("Productos iniciales:", productManager.getProducts());
 
-productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25);
-productManager.addProduct("producto prueba1", "Este es un producto prueba1", 500, "Sin imagen", "abc456", 25);
+// productManager.addProduct("producto prueba", "Este es un producto prueba", 200, "Sin imagen", "abc123", 25);
+// productManager.addProduct("producto prueba1", "Este es un producto prueba1", 500, "Sin imagen", "abc456", 25);
 
-const idbuscado = 1;
-const productobuscado = productManager.getProductById(idbuscado);
+// const idbuscado = 1;
+// const productobuscado = productManager.getProductById(idbuscado);
 
-if (productobuscado) {
-  console.log(`Producto encontrado con ID ${idbuscado}:`, productobuscado);
-} else {
-  console.error(`Producto no encontrado con ID ${productIdToFind}`);
-}
+// if (productobuscado) {
+//   console.log(`Producto encontrado con ID ${idbuscado}:`, productobuscado);
+// } else {
+//   console.error(`Producto no encontrado con ID ${productIdToFind}`);
+// }
 
-const idmodifico = 1;
-productManager.updateProduct(idmodifico, { price: 250, stock: 30 });
+// const idmodifico = 1;
+// productManager.updateProduct(idmodifico, { price: 250, stock: 30 });
 
-const borraid = 1;
-productManager.deleteProduct(borraid);
+// const borraid = 1;
+// productManager.deleteProduct(borraid);
 
-// Llamar a "getProducts" después de la eliminación
-console.log("Productos:", productManager.getProducts());
-
+// // Llamar a "getProducts" después de la eliminación
+// console.log("Productos:", productManager.getProducts());
