@@ -15,6 +15,15 @@ app.get("/products", (req,res) => {
     res.send(productos)
 })
 
+app.get("/products/:id", (req,res) => {
+
+    const idbuscado = req.params.id;
+    console.log(idbuscado)
+    const productobuscado = productManager.getProductById(idbuscado);
+    res.send(productobuscado)
+
+})
+
 app.listen(3000,() => {
     console.log("aplicacion funcionando")
 })
