@@ -4,10 +4,19 @@ const productManager = new ProductManager('productos.json');
 const express = require("express");
 const app = express();
 
+const routerUsers = require("./routes/users.router")
+
+//Middlewares
 app.use(express.json())
+app.use(express.static("public"))
 app.use(express.urlencoded({extended:true}))
 
+//routers
+app.use(routerUsers)
+
 var fraseInicial = "hola, como andas"
+
+//reglas
 
 app.get("/ping", (req, res) => {
     res.send("pong");
