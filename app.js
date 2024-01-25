@@ -4,8 +4,22 @@ const productManager = new ProductManager('productos.json');
 const express = require("express");
 const app = express();
 
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+var fraseInicial = "hola, como andas"
+
 app.get("/ping", (req, res) => {
     res.send("pong");
+})
+
+app.get("/api/frase", (req, res) => {
+    res.send({frase: fraseInicial})
+})
+app.post("/api/palabras", (req, res) => {
+    let body = req.body
+    fraseInicial = fraseInicial + " "+body.palabra
+    res.status(201).send({status:201})
 })
 
 app.get("/products", (req,res) => {
