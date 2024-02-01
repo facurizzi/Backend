@@ -1,3 +1,6 @@
+import { Server } from "socket.io";
+
+
 const express = require("express");
 const exphbs = require("express-handlebars");
 const path = require("path");
@@ -6,6 +9,12 @@ const ProductManager = require("./ProductManager.js");
 const productManager = new ProductManager("productos.json");
 
 const app = express();
+
+const httpServer = app.listen(3000, () => {
+  console.log("Aplicación funcionando en el puerto 3000");
+});
+
+const sockerServer = new Server(httpServer)
 
 const routerUsers = require("./routes/users.router");
 
@@ -66,6 +75,4 @@ app.get("/", (req, res) => {
   res.render("index", testUser);
 });
 
-app.listen(3000, () => {
-  console.log("Aplicación funcionando en el puerto 3000");
-});
+

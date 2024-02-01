@@ -13,4 +13,8 @@ router.post("/", (req, res) => {
     res.status(201).send({status:201})
 })
 
+router.get('/socket',(req, res) => {
+    res.render('socket')
+})
+
 module.exports = router;
